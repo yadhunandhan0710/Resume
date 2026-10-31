@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bhaskara Yadhu Nandhan · Banking &amp; Finance</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@300;400;500;600&display=swap">
+<style>
+:root{
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#07090f;--bg2:#0d1220;--card:rgba(255,255,255,.045);--line:rgba(255,255,255,.1);
+  --text:#eef1f8;--mute:#9aa4bd;--gold:#e6c27a;--teal:#6fe0d0;--rose:#e58fa8;
+  --serif:'Fraunces',Georgia,'Times New Roman',serif;--sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f7f4ee;--bg2:#efe9dd;--card:rgba(255,255,255,.7);--line:rgba(20,25,40,.12);--text:#161a28;--mute:#5b6479;--gold:#9a6b12;--teal:#0f8a7c;--rose:#b3466a}}
+:root[data-theme="light"]{--bg:#f7f4ee;--bg2:#efe9dd;--card:rgba(255,255,255,.7);--line:rgba(20,25,40,.12);--text:#161a28;--mute:#5b6479;--gold:#9a6b12;--teal:#0f8a7c;--rose:#b3466a}
+:root[data-theme="dark"]{--bg:#07090f;--bg2:#0d1220;--card:rgba(255,255,255,.045);--line:rgba(255,255,255,.1);--text:#eef1f8;--mute:#9aa4bd;--gold:#e6c27a;--teal:#6fe0d0;--rose:#e58fa8}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--text);font:400 16px/1.7 var(--sans);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
+.aurora{position:fixed;inset:0;z-index:-1;overflow:hidden;background:radial-gradient(120% 80% at 50% 0,var(--bg2),var(--bg))}
+.aurora i{position:absolute;width:55vmax;height:55vmax;border-radius:50%;filter:blur(90px);opacity:.28;animation:drift 22s ease-in-out infinite alternate}
+.aurora i:nth-child(1){background:var(--gold);top:-20%;left:-15%}
+.aurora i:nth-child(2){background:var(--teal);bottom:-25%;right:-15%;animation-delay:-8s}
+.aurora i:nth-child(3){background:var(--rose);top:30%;left:45%;width:35vmax;height:35vmax;opacity:.16;animation-delay:-14s}
+@keyframes drift{to{transform:translate(8vmax,6vmax) scale(1.2)}}
+nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:14px clamp(18px,5vw,56px);backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 55%,transparent);border-bottom:1px solid var(--line)}
+nav b{font:600 1.05rem var(--serif);letter-spacing:.02em}
+nav div{display:flex;gap:22px;align-items:center}
+nav a{color:var(--mute);text-decoration:none;font-size:.85rem;transition:color .2s}
+nav a:hover{color:var(--gold)}
+nav button{background:none;border:1px solid var(--line);color:var(--text);border-radius:99px;width:34px;height:34px;cursor:pointer;font-size:1rem}
+@media(max-width:640px){nav a{display:none}}
+main{max-width:1060px;margin:0 auto;padding:0 clamp(18px,5vw,40px)}
+section{padding:90px 0 20px}
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:110px}
+.eyebrow{color:var(--gold);letter-spacing:.28em;text-transform:uppercase;font-size:.74rem;font-weight:500}
+h1{font:400 clamp(2.6rem,8.5vw,6.4rem)/1.02 var(--serif);margin:18px 0 22px;letter-spacing:-.02em}
+h1 em{font-style:italic;background:linear-gradient(100deg,var(--gold),var(--teal) 60%,var(--rose));-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% auto;animation:shine 8s linear infinite}
+@keyframes shine{to{background-position:200% center}}
+.lead{max-width:600px;color:var(--mute);font-size:1.12rem;font-weight:300}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.btn{padding:12px 26px;border-radius:99px;text-decoration:none;font-weight:500;font-size:.9rem;border:1px solid var(--line);color:var(--text);transition:.25s}
+.btn.p{background:linear-gradient(120deg,var(--gold),var(--teal));color:#07090f;border:0}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 30px -10px var(--gold)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:64px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;backdrop-filter:blur(10px)}
+.stat strong{display:block;font:400 2.3rem/1 var(--serif);color:var(--gold)}
+.stat span{color:var(--mute);font-size:.8rem;letter-spacing:.06em}
+h2{font:400 clamp(1.8rem,4vw,2.6rem) var(--serif);margin-bottom:34px;display:flex;align-items:center;gap:18px}
+h2::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:clamp(22px,4vw,36px);backdrop-filter:blur(10px);transition:.35s}
+.card:hover{border-color:color-mix(in srgb,var(--gold) 60%,transparent);transform:translateY(-4px)}
+.role{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px}
+.role h3{font:600 1.4rem var(--serif)}
+.tag{color:var(--teal);font-size:.85rem}
+.when{color:var(--mute);font-size:.85rem}
+.card ul{margin:18px 0 0;padding-left:0;list-style:none}
+.card li{position:relative;padding-left:22px;margin:10px 0;color:var(--mute)}
+.card li::before{content:"";position:absolute;left:0;top:.7em;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--teal))}
+.tl{position:relative;padding-left:34px}
+.tl::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:1px;background:linear-gradient(var(--gold),var(--teal),transparent)}
+.tl .item{position:relative;margin-bottom:18px}
+.tl .item::before{content:"";position:absolute;left:-34px;top:30px;width:15px;height:15px;border-radius:50%;background:var(--bg);border:2px solid var(--gold);box-shadow:0 0 0 5px color-mix(in srgb,var(--gold) 18%,transparent)}
+.item h3{font:600 1.2rem var(--serif)}
+.item p{color:var(--mute);font-size:.92rem}
+.score{float:right;font:400 1.5rem var(--serif);color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{padding:9px 18px;border-radius:99px;border:1px solid var(--line);background:var(--card);font-size:.88rem}
+.chip.g{border-color:var(--gold);color:var(--gold)}
+.small{margin:0 0 12px;color:var(--mute);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase}
+.card.plain:hover{transform:none}
+footer{text-align:center;padding:100px 0 50px;color:var(--mute);font-size:.82rem}
+footer h2{justify-content:center;font-size:clamp(2rem,5vw,3.4rem)}
+footer h2::after{display:none}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="aurora"><i></i><i></i><i></i></div>
+<nav><b>BYN</b><div><a href="#experience">Experience</a><a href="#education">Education</a><a href="#credentials">Credentials</a><a href="#contact">Contact</a><button id="t" aria-label="Toggle theme">◐</button></div></nav>
+<main>
+<section class="hero">
+  <p class="eyebrow">MBA · Banking &amp; Finance · SSBF Pune</p>
+  <h1>Bhaskara<br><em>Yadhu Nandhan</em></h1>
+  <p class="lead">Fourteen months inside the machinery of retail lending, now sharpening the theory behind it. I turn raw loan data into clear decisions, and I like it precise.</p>
+  <div class="cta"><a class="btn p" href="#experience">Explore my journey</a><a class="btn" href="mailto:yadhu.nandhan.26-28@ssbf.edu.in">Say hello</a></div>
+  <div class="stats">
+    <div class="stat rv"><strong data-n="14">0</strong><span>MONTHS IN LOAN OPERATIONS</span></div>
+    <div class="stat rv"><strong data-n="90.63" data-d="2">0</strong><span>BBA PERCENTAGE</span></div>
+    <div class="stat rv"><strong data-n="9.92" data-d="2">0</strong><span>12TH GRADE GPA</span></div>
+    <div class="stat rv"><strong data-n="4">0</strong><span>LANGUAGES SPOKEN</span></div>
+  </div>
+</section>
+
+<section id="experience">
+  <h2 class="rv">Experience</h2>
+  <div class="card rv">
+    <div class="role"><div><h3>Risk Collection Executive</h3><div class="tag">TeamSpace Financial Pvt. Ltd., Bangalore · serving Yes Bank</div></div><div class="when">12 Jun 2024 – 22 Aug 2025</div></div>
+    <ul>
+      <li>Coordinated with teams and clients to collect and verify loan-related data.</li>
+      <li>Validated data and prepared daily, weekly and monthly MIS reports.</li>
+      <li>Managed the data that helped the team make decisions and work more efficiently.</li>
+      <li>Resolved customer queries on repayment, loan status and loan statements.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="education">
+  <h2 class="rv">Education</h2>
+  <div class="tl">
+    <div class="item card rv"><span class="score">Pursuing</span><h3>MBA · Banking &amp; Finance</h3><p>Symbiosis School of Banking and Finance · Symbiosis International University · 2026–2028</p></div>
+    <div class="item card rv"><span class="score">90.63%</span><h3>BBA</h3><p>International Institute of Business Studies, Bangalore · Bengaluru City University · 2023</p></div>
+    <div class="item card rv"><span class="score">9.92</span><h3>Intermediate (12th)</h3><p>Mother Teresa Junior College, Palamaner · Board of Intermediate Education, AP · 2020</p></div>
+    <div class="item card rv"><span class="score">9.2</span><h3>Secondary (10th)</h3><p>Vidyarthi EM High School, B. Kothakota · CBSE · 2018</p></div>
+  </div>
+</section>
+
+<section id="credentials">
+  <h2 class="rv">Credentials &amp; Craft</h2>
+  <div class="grid">
+    <div class="card rv"><p class="small">Certifications</p><ul>
+      <li>Financial Literacy Course · NISM 2026</li>
+      <li>SEBI Investor Awareness Test · NISM 2026</li>
+      <li>Financial Accounting: Foundations · Coursera 2026</li></ul></div>
+    <div class="card rv"><p class="small">Recognition &amp; Service</p><ul>
+      <li>Member, Banking Drive Committee, SSBF · 2026</li>
+      <li>Academic Excellence Award, graduation · 2023</li>
+      <li>NSS Volunteer: cleanliness and awareness drives · 2022</li>
+      <li>Organised Blood Donation Camp at IIBS · 2022</li>
+      <li>Merit Scholarship for a perfect GPA · 2019</li></ul></div>
+  </div>
+  <div class="card plain rv" style="margin-top:16px">
+    <p class="small">Skills</p><div class="chips"><span class="chip g">Advanced Excel</span><span class="chip g">Interpretation Skills</span><span class="chip">MIS Reporting</span><span class="chip">Data Validation</span></div>
+    <p class="small" style="margin-top:24px">Languages</p><div class="chips"><span class="chip">English</span><span class="chip">Hindi</span><span class="chip">Telugu</span><span class="chip">Kannada</span></div>
+    <p class="small" style="margin-top:24px">Off the clock</p><div class="chips"><span class="chip">Sudoku</span><span class="chip">Travelling</span></div>
+  </div>
+</section>
+</main>
+
+<footer id="contact">
+  <h2 class="rv">Let’s build something <em style="font-style:italic;color:var(--gold)">trusted</em>.</h2>
+  <p class="rv" style="margin:6px 0 26px">Open to opportunities where integrity and data come together.</p>
+  <div class="cta rv" style="justify-content:center">
+    <a class="btn p" href="mailto:yadhu.nandhan.26-28@ssbf.edu.in">yadhu.nandhan.26-28@ssbf.edu.in</a>
+    <a class="btn" href="https://linkedin.com/in/bhaskara-yadhu-nandhan">LinkedIn</a>
+  </div>
+  <p style="margin-top:60px">Symbiosis School of Banking &amp; Finance, Pune · Batch of 2026–2028</p>
+</footer>
+
+<script>
+(function(){
+  var r=document.documentElement,b=document.getElementById('t');
+  b.onclick=function(){
+    var dark=r.getAttribute('data-theme')?r.getAttribute('data-theme')==='dark':!matchMedia('(prefers-color-scheme:light)').matches;
+    r.setAttribute('data-theme',dark?'light':'dark');
+  };
+  function count(el){
+    var n=parseFloat(el.dataset.n),d=+el.dataset.d||0,t0=performance.now();
+    (function f(t){var p=Math.min((t-t0)/1600,1),e=1-Math.pow(1-p,3);el.textContent=(n*e).toFixed(d);if(p<1)requestAnimationFrame(f)})(t0);
+  }
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(!e.isIntersecting)return;e.target.classList.add('in');
+    var s=e.target.querySelector('[data-n]');if(s&&!s.done){s.done=1;count(s)}
+    io.unobserve(e.target);
+  })},{threshold:.15});
+  document.querySelectorAll('.rv').forEach(function(x){io.observe(x)});
+})();
+</script>
+</body>
+</html>
